@@ -5,6 +5,12 @@
 
 if exists("g:loaded_CompileLaTex")
     finish
+elseif v:version < 800
+    echohl WarningMsg |
+        \ echomsg "CompileLaTex only suports vim 8+" |
+        \ echohl None
+  call s:restore_cpo()
+finish
 endif
 let g:loaded_CompileLaTex = 1 " your version number
 let s:save_cpo = &cpo
