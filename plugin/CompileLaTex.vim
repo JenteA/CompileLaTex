@@ -20,7 +20,7 @@ if !exists(":CompileLaTex")
 endif
 
 function s:CompileAndOpenLatex()
-    silent execute expand(g:CompileLaTexCompiler). " %"
+    silent execute "!" . expand(g:CompileLaTexCompiler). " %"
     let l:filename= expand("%<.pdf").".pdf"
     let open=system('ps -fe | grep "' .expand(g:CompileLaTexPDFReader) . ' ' .expand(l:filename) .'" | grep -vc g    rep')
     if open == 0
