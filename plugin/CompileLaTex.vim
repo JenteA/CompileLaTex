@@ -16,7 +16,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 if !exists(":CompileLaTex")
-    command -nargs=1  CompileLaTex  :call s:CompileAndOpenLatex()
+    command -nargs=0  CompileLaTex  :call s:CompileAndOpenLatex()
 endif
 
 function s:CompileAndOpenLatex()
