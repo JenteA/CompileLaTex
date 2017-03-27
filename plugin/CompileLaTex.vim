@@ -26,7 +26,7 @@ function s:CompileAndOpenLatex()
     if open == 0
         let pdf = job_start(expand(g:CompileLaTexPDFReader) . " " .expand(l:filename))
     endif
-    :redraw!
+"    :redraw!
 endfunction
 
 let &cpo = s:save_cpo
