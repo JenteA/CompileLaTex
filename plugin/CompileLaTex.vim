@@ -16,7 +16,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 if !hasmapto('<Plug>CompileLaTex')
-    map <unique> <F10>  <Plug>CompileAndOpenLatex
+    map <unique> <F10> <Plug>CompileAndOpenLatex
 endif
 
 function s:CompileAndOpenLatex()
