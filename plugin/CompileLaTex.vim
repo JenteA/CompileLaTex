@@ -15,7 +15,7 @@ let g:loaded_CompileLaTex = 1 " your version number
 let s:save_cpo = &cpo
 set cpo&vim
 
-if !hasmapto('<Plug>CompileLaTex')
+if !hasmapto('<Plug>CompileAndOpenLatex')
     map <unique> <F10> <Plug>CompileAndOpenLatex
 endif
 
