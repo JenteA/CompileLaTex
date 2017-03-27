@@ -1,9 +1,20 @@
 "=============================================================================
-" File: 
-" Author: 
-" Version: 
+" File: CompileLaTex.vim
+" Author: Jente Adams
+" Version: 0.1.0
 
-function CompileAndOpenLatex()
+if exists("g:loaded_CompileLaTex")
+    finish
+endif
+let g:loaded_CompileLaTex = 1 " your version number
+let s:save_cpo = &cpo
+set cpo&vim
+
+if !hasmapto('<Plug>CompileLaTex')
+    map <unique> <F10>  <Plug>CompileAndOpenLatex
+endif
+
+function s:CompileAndOpenLatex()
     silent execute expand(g:CompileLaTexCompiler). " %"
     let l:filename= expand("%<.pdf").".pdf"
     let open=system('ps -fe | grep "' .expand(g:CompileLaTexPDFReader) . ' ' .expand(l:filename) .'" | grep -vc g    rep')
@@ -13,4 +24,4 @@ function CompileAndOpenLatex()
     :redraw!
 endfunction
 
-command! -nargs=0 -bar CompileAndOpen call <SID>CompileAndOpenLatex()
+let &cpo = s:save_cpo
