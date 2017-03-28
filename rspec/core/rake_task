@@ -1,0 +1,10 @@
+require 'vimrunner'
+
+vim = Vimrunner.start
+vim.add_plugin(File.expand_path('../..', __FILE__), 'plugin/CompileLaTex.vim')
+
+RSpec.describe "CompileLaTex.vim" do
+    after(:all) do
+        vim.kill
+    end
+end
