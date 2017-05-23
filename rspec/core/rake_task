@@ -7,7 +7,7 @@ RSpec.describe "CompileLaTex.vim" do
     after(:all) do
         vim.kill
     end
-describe "run plugin" do
+RSpec.describe "run plugin" do
       specify "compile LaTex" do
           LaTexFile
           vim.edit 'test.tex'                                                             
