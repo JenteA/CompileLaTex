@@ -2,6 +2,6 @@
 source "https://rubygems.org"
 
 # gem "rails"
-gem 'vimrunner',    '~> 0.3.1'
-gem 'rspec',        '~> 3.1.0'
-gem 'rake',         '~> 10.3.2'
+gem 'vimrunner',    '~> 0.3.3'
+gem 'rspec',        '~> 3.6.0'
+gem 'rake',         '~> 12.0.0'
