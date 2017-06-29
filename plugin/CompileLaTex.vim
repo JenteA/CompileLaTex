@@ -22,10 +22,7 @@ endif
 function s:CompileAndOpenLatex()
     silent execute "!" . expand(g:CompileLaTexCompiler). " %"
     let l:filename= expand("%<.pdf").".pdf"
-    echo g:CompileLaTexPDFReader
-    echo l:filename
-    let open=system('pgrep -fc "' . g:CompileLaTexPDFReader . ' ' . l:filename . '"' ) "' .expand(g:CompileLaTexPDFReader) . ' ' .expand(l:filename)'"')
-    echo open
+    let open=system('pgrep -fc "' . g:CompileLaTexPDFReader . ' ' . l:filename . '"' )
     if open == 0
         let pdf = job_start(expand(g:CompileLaTexPDFReader) . " " .expand(l:filename))
     endif
