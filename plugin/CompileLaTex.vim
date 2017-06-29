@@ -22,7 +22,7 @@ endif
 function s:CompileAndOpenLatex()
     silent execute "!" . expand(g:CompileLaTexCompiler). " %"
     let l:filename= expand("%<.pdf").".pdf"
-    let open=system('ps -fe | grep "' .expand(g:CompileLaTexPDFReader) . ' ' .expand(l:filename) .'" | grep -vc g    rep')
+    let open=system('ps -fe | grep "' .expand(g:CompileLaTexPDFReader) . ' ' .expand(l:filename) .'" | grep -vc grep')
     if open == 0
         let pdf = job_start(expand(g:CompileLaTexPDFReader) . " " .expand(l:filename))
     endif
